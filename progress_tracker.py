@@ -48,7 +48,9 @@ def main():
     # データフレームの列名に、必要な列が含まれているかチェック
     # 初心者向けポイント: リスト内包表記と all() 関数を使った効率的なチェック方法です。
     if not all(col in df.columns for col in required_columns):
-        print("警告: 想定している列名 ('Task Name', 'Status') が見つかりません。")
+        print(
+            "警告: 想定している列名 ('Task Name', 'Status') が見つかりません。"
+        )
         print("列の位置（2列目と6列目）を使って処理を続行します。")
 
         # 列名が見つからない場合の救済措置（フォールバック）

@@ -9,3 +9,27 @@ dependencies = [
     "pandas>=2.3.3",
     "ruff>=0.14.7",
 ]
+
+# Black フォーマッター設定
+[tool.black]
+# 行長を79文字に制限（PEP 8準拠）
+line-length = 79
+
+# 対象Pythonバージョン
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+
+# フォーマット対象ファイルのパターン
+include = '\.pyi?$'
+
+# 除外するディレクトリ・ファイル
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | venv
+  | __pycache__
+  | \.pytest_cache
+  | build
+  | dist
+)/
+'''
