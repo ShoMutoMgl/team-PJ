@@ -1,0 +1,14 @@
+[flake8]
+# 行長を79文字に制限（PEP 8準拠、Blackと同じ設定）
+max-line-length = 79
+
+# 除外するディレクトリ
+exclude = .git,__pycache__,.venv,venv,.pytest_cache,build,dist
+
+# 無視するエラーコード
+# E203: Black との互換性のため（スライスのスペース）
+# W503: Black との互換性のため（演算子の前での改行）
+ignore = E203,W503
+
+# 1ファイルあたりの最大複雑度（循環的複雑度）
+max-complexity = 10
