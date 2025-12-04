@@ -2,6 +2,11 @@ import logging
 import sys
 import traceback
 
+# Windows環境での文字化け対策
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+
 # ロギングの設定
 # INFOレベル以上のログを出力するように設定します。
 # フォーマットは [日時] レベル: メッセージ とします。
