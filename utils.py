@@ -33,6 +33,28 @@ def log_end(func_name):
     logging.info(f"END:   {func_name} を終了しました。")
 
 
+def log_warning(message):
+    """
+    警告メッセージをログ出力します（WARNINGレベル）。
+    重大ではないが注意が必要な状況で使用してください。
+
+    Args:
+        message (str): 警告メッセージ
+    """
+    logging.warning(f"WARNING: {message}")
+
+
+def log_error(message):
+    """
+    エラーメッセージをログ出力します（ERRORレベル）。
+    処理は継続するが、エラーが発生した場合に使用してください。
+
+    Args:
+        message (str): エラーメッセージ
+    """
+    logging.error(f"ERROR: {message}")
+
+
 def handle_error(e):
     """
     エラー発生時に簡潔な情報を出力して終了します。

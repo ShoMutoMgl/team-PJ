@@ -8,6 +8,7 @@ dependencies = [
     "openpyxl>=3.1.5",
     "pandas>=2.3.3",
     "ruff>=0.14.7",
+    "black>=24.0.0",
 ]
 
 # Black フォーマッター設定
@@ -33,3 +34,27 @@ exclude = '''
   | dist
 )/
 '''
+
+# Flake8 リンター設定
+[tool.flake8]
+# 行長を79文字に制限（PEP 8準拠、Blackと同じ設定）
+max-line-length = 79
+
+# 除外するディレクトリ
+exclude = [
+    ".git",
+    "__pycache__",
+    ".venv",
+    "venv",
+    ".pytest_cache",
+    "build",
+    "dist",
+]
+
+# 無視するエラーコード（必要に応じて調整）
+# E203: Black との互換性のため（スライスのスペース）
+# W503: Black との互換性のため（演算子の前での改行）
+ignore = ["E203", "W503"]
+
+# 1ファイルあたりの最大複雑度（循環的複雑度）
+max-complexity = 10
